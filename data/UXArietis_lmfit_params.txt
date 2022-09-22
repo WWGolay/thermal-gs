@@ -1,0 +1,33 @@
+# UX Arietis
+7.402749650019623040e+00
+2.779439623075712351e+00
+5.961721929115165075e+00
+1.540351903103583879e+02
+1.509121966625897038e+00
+# [[Fit Statistics]]
+#     # fitting method   = Nelder-Mead
+#     # function evals   = 361
+#     # data points      = 12
+#     # variables        = 5
+#     chi-square         = 373.618479
+#     reduced chi-square = 53.3740684
+#     Akaike info crit   = 51.2599422
+#     Bayesian info crit = 53.6844755
+# [[Variables]]
+#     L_pwr:      7.40274965 +/- 1.65267017 (22.33%) (init = 7.8)
+#     delta:      2.77943962 +/- 0.15349548 (5.52%) (init = 2.88)
+#     n_pwr:      5.96172193 +/- 1.18453030 (19.87%) (init = 5.7)
+#     B_pwr:      154.035190 +/- 100.549142 (65.28%) (init = 200)
+#     theta_pwr:  1.50912197 +/- 0.05945217 (3.94%) (init = 1.53589)
+# [[Correlations]] (unreported correlations are < 0.100)
+#     C(B_pwr, theta_pwr) = -0.999
+#     C(L_pwr, theta_pwr) = -0.991
+#     C(n_pwr, theta_pwr) = 0.990
+#     C(n_pwr, B_pwr)     = -0.990
+#     C(L_pwr, n_pwr)     = -0.989
+#     C(L_pwr, B_pwr)     = 0.988
+#     C(delta, n_pwr)     = 0.942
+#     C(L_pwr, delta)     = -0.897
+#     C(delta, B_pwr)     = -0.887
+#     C(delta, theta_pwr) = 0.887
+#  Lx: 0.00e+00 erg/s

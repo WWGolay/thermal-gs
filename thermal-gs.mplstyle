@@ -1,0 +1,14 @@
+font.size: 12
+legend.fontsize: 10
+xtick.direction: in
+ytick.direction: in
+xtick.major.size: 10.0
+xtick.minor.size: 5.0
+ytick.major.size: 10.0
+ytick.minor.size: 5.0
+errorbar.capsize: 4.0
+legend.framealpha: 0.9
+figure.dpi: 400
+axes.linewidth: 2.0
+axes.facecolor: white
+axes.prop_cycle: cycler('color', ['377eb8', 'e41a1c', '4daf4a', 'dede00', 'ff7f00', '999999', '984ea3', 'f781bf', 'a65628'])

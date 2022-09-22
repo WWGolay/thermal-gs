@@ -1,0 +1,19 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+file: README
+numbered: true
+
+sections:
+- file: notebooks/1_thermal_gs
+- file: notebooks/2_thermal_power
+- file: notebooks/3_rs-cvn_seds
+- file: notebooks/4_rs-cvn_corner
+- file: notebooks/5_algol
+- file: notebooks/6_wtt_seds
+- file: notebooks/7_v410_corner
+- file: notebooks/8_hd283572_corner
+- file: notebooks/a1_priors
+- file: notebooks/b1_autocorrelation
+- file: notebooks/b2_walker_plot
+- file: notebooks/c1_bic-demo
