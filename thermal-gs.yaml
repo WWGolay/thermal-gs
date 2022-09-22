@@ -1,4 +1,4 @@
-name: base
+name: thermalgs
 channels:
   - glueviz
   - conda-forge
