@@ -1,7 +1,7 @@
 # A search for thermal gyrosynchrotron emission from hot stellar coronae
 
 [![paper](https://img.shields.io/badge/read-the%20paper-brightgreen)]()
-[![DOI](https://zenodo.org/badge/333844972.svg)]()
+[![DOI]()]()
 
 ## Quickstart
 This site hosts the collection of Jupyter notebooks used to produce each figure in the paper. All of the data used by each notebook is available [here](). Individual datasets for each notebook can also be downloaded directly from within the notebooks themselves.
@@ -10,7 +10,8 @@ This site hosts the collection of Jupyter notebooks used to produce each figure 
 The main [repo](https://github.com/wwgolay/thermal-gs) also hosts a `thermal-gs.yaml` file for reproducing the Python environment used with either pip or conda:
 
 ```
-conda env create -f thermal-gs.yaml; conda activate thermalgs
+conda env create -f thermal-gs.yaml
+conda activate thermalgs
 ```
 
 ## Issues
