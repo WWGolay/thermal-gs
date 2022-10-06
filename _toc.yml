@@ -9,8 +9,8 @@ sections:
 - file: notebooks/rs-cvn_corner-plots
 - file: notebooks/algol
 - file: notebooks/wtt_seds
-- file: notebooks/V410Tau_corner
-- file: notebooks/HD283572_corner
+- file: notebooks/V410Tau_corner-plot
+- file: notebooks/HD283572_corner-plot
 - file: notebooks/prior-pdfs_appendixA
 - file: notebooks/autocorrelation_appendixB
 - file: notebooks/walker-plot_appendixB
