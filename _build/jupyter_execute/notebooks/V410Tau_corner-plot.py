@@ -52,7 +52,7 @@ plt.style.use('../data/thermal-gs.mplstyle')
 
 # ## 7.4. Plot
 
-# In[4]:
+# In[3]:
 
 
 thin = 10000
