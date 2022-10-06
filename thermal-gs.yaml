@@ -1,4 +1,4 @@
-name: thermalgs
+name: thermal-gs
 channels:
   - glueviz
   - conda-forge

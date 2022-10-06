@@ -1,17 +1,17 @@
 format: jb-article
 root: README
 options:
-  numbered: true
+  numbered: false
 sections:
-- file: notebooks/1_thermal_gs
-- file: notebooks/2_thermal_power
-- file: notebooks/3_rs-cvn_seds
-- file: notebooks/4_rs-cvn_corner
-- file: notebooks/5_algol
-- file: notebooks/6_wtt_seds
-- file: notebooks/7_v410_corner
-- file: notebooks/8_hd283572_corner
-- file: notebooks/a1_priors
-- file: notebooks/b1_autocorrelation
-- file: notebooks/b2_walker_plot
-- file: notebooks/c1_bic-demo
+- file: notebooks/thermal-gs_model
+- file: notebooks/hybrid_model
+- file: notebooks/rs-cvn_seds
+- file: notebooks/rs-cvn_corner-plots
+- file: notebooks/algol
+- file: notebooks/wtt_seds
+- file: notebooks/V410Tau_corner
+- file: notebooks/HD283572_corner
+- file: notebooks/prior-pdfs_appendixA
+- file: notebooks/autocorrelation_appendixB
+- file: notebooks/walker-plot_appendixB
+- file: notebooks/bic-demo_appendixC

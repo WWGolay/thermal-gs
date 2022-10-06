@@ -11,7 +11,7 @@ The main [repo](https://github.com/wwgolay/thermal-gs) also hosts a `thermal-gs.
 
 ```
 conda env create -f thermal-gs.yaml
-conda activate thermalgs
+conda activate thermal-gs
 ```
 
 ## Issues

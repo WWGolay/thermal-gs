@@ -3,12 +3,18 @@
 
 title: A search for thermal gyrosynchrotron emission from hot stellar coronae
 author: Walter Golay
+copyright: "2022"
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
+
+html:
+  favicon: favicon.ico
+  use_repository_button: true
+  use_issues_button: true
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -24,9 +30,3 @@ repository:
   url: https://github.com/thermal-gs/  # Online location of your book
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
-
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
-html:
-  use_issues_button: true
-  use_repository_button: true
