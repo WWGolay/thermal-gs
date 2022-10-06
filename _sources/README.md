@@ -2,6 +2,8 @@
 
 [![paper](https://img.shields.io/badge/read-the%20paper-brightgreen)]()
 [![DOI]()]()
+[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://github.com/WWGolay/thermal-gs)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Quickstart
 This site hosts the collection of Jupyter notebooks used to produce each figure in the paper. All of the data used by each notebook is available [here](). Individual datasets for each notebook can also be downloaded directly from within the notebooks themselves.
