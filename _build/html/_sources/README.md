@@ -2,7 +2,11 @@
 
 [![paper](https://img.shields.io/badge/read-the%20paper-B31B1B)]()
 [![DOI]()]()
+<<<<<<< HEAD
 [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://wwgolay.github.io/thermal-gs)
+=======
+[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](wwgolay.github.io/thermal-gs)
+>>>>>>> 7097bfa28320ec5e39d2be5d715c287a60259f4e
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Quickstart
