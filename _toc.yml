@@ -11,7 +11,5 @@ sections:
 - file: notebooks/wtt_seds
 - file: notebooks/V410Tau_corner-plot
 - file: notebooks/HD283572_corner-plot
-- file: notebooks/prior-pdfs_appendixA
-- file: notebooks/autocorrelation_appendixB
-- file: notebooks/walker-plot_appendixB
-- file: notebooks/bic-demo_appendixC
+- file: notebooks/autocorrelation_B
+- file: notebooks/walker-plot_B
