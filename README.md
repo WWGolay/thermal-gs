@@ -1,8 +1,8 @@
 # A search for thermal gyrosynchrotron emission from hot stellar coronae
 
-[![paper](https://img.shields.io/badge/read-the%20paper-brightgreen)]()
+[![paper](https://img.shields.io/badge/read-the%20paper-B31B1B)]()
 [![DOI]()]()
-[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](wwgolay.github.io/thermal-gs)
+[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://wwgolay.github.io/thermal-gs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Quickstart
@@ -17,4 +17,4 @@ conda activate thermal-gs
 ```
 
 ## Issues
-Please post any issues you find [here](https://github.com/wwgolay/thermal-gs/issues)
+Please post any issues you find [here](https://github.com/wwgolay/thermal-gs/issues).

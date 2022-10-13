@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="A1. Prior PDFs" href="prior-pdfs_appendixA.html" />
+    <link rel="next" title="B1. Autocorrelation" href="autocorrelation_B.html" />
     <link rel="prev" title="7. V410 Tau Corner Plot" href="V410Tau_corner-plot.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -156,23 +156,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="prior-pdfs_appendixA.html">
-   A1. Prior PDFs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="autocorrelation_appendixB.html">
+  <a class="reference internal" href="autocorrelation_B.html">
    B1. Autocorrelation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="walker-plot_appendixB.html">
+  <a class="reference internal" href="walker-plot_B.html">
    B2. Walker plot
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="bic-demo_appendixC.html">
-   C1. BIC Demo
   </a>
  </li>
 </ul>
@@ -234,7 +224,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/thermal-gs//master?urlpath=tree/docs/notebooks/HD283572_corner-plot.ipynb"
+        <a href="https://mybinder.org/v2/gh/wwgolay/thermal-gs/master?urlpath=tree/notebooks/HD283572_corner-plot.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -277,7 +267,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/thermal-gs/"
+        <a href="https://github.com/wwgolay/thermal-gs/"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -294,7 +284,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/thermal-gs//issues/new?title=Issue%20on%20page%20%2Fnotebooks/HD283572_corner-plot.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wwgolay/thermal-gs//issues/new?title=Issue%20on%20page%20%2Fnotebooks/HD283572_corner-plot.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -467,6 +457,8 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">emcee</span>
 <span class="kn">import</span> <span class="nn">corner</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -546,15 +538,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/72/x005f_sn1nq047zkj8cd5ppw0000gn/T/ipykernel_2669/857846362.py:7: MatplotlibDeprecationWarning: You are modifying the state of a globally registered colormap. This has been deprecated since 3.3 and in 3.6, you will not be able to modify a registered colormap in-place. To remove this warning, you can make a copy of the colormap first. cmap = mpl.cm.get_cmap(&quot;Reds&quot;).copy()
-  cmap.set_under(color=&#39;w&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/72/x005f_sn1nq047zkj8cd5ppw0000gn/T/ipykernel_2669/857846362.py:28: UserWarning: Matplotlib is currently using module://matplotlib_inline.backend_inline, which is a non-GUI backend, so cannot show the figure.
-  cornerFig.show()
-</pre></div>
-</div>
-<img alt="../_images/HD283572_corner-plot_8_2.png" src="../_images/HD283572_corner-plot_8_2.png" />
+<img alt="../_images/HD283572_corner-plot_8_0.png" src="../_images/HD283572_corner-plot_8_0.png" />
 </div>
 </div>
 </section>
@@ -594,10 +578,10 @@ title="Print to PDF"
             <p class="prev-next-title">7. V410 Tau Corner Plot</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="prior-pdfs_appendixA.html" title="next page">
+    <a class='right-next' id="next-link" href="autocorrelation_B.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">A1. Prior PDFs</p>
+        <p class="prev-next-title">B1. Autocorrelation</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

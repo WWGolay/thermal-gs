@@ -13,6 +13,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import emcee
 import corner
+import warnings
+warnings.filterwarnings('ignore')
 
 
 # ## 8.2. <a href="https://www.dropbox.com/s/6lfj9z74tphpekj/hd283572_corner-plot.zip?dl=1">Download data</a>
