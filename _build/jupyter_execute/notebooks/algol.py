@@ -13,6 +13,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import emcee
 import corner
+import warnings
+warnings.filterwarnings('ignore')
 
 
 # ## 5.2. <a href="https://www.dropbox.com/s/abiy7n0bhh6ku5z/algol.zip?dl=1">Download data</a>
@@ -48,8 +50,10 @@ import corner
 
 
 freqs_model = np.loadtxt('../data/model_sed_freqs.txt').T
-I_models = np.loadtxt('../data/Algol_I_models.txt')
-V_models = np.loadtxt('../data/Algol_V_models.txt')
+I_models_1 = np.loadtxt('../data/Algol_I_models_1.txt')
+V_models_1 = np.loadtxt('../data/Algol_V_models_1.txt')
+I_models_2 = np.loadtxt('../data/Algol_I_models_2.txt')
+V_models_2 = np.loadtxt('../data/Algol_V_models_2.txt')
 freqs_obs, I_obs, sI_obs, V_obs, sV_obs = np.loadtxt('../data/Algol_data.txt', unpack=True)
 
 sampler = emcee.backends.HDFBackend('../data/Algol_chain.h5')
@@ -71,11 +75,13 @@ plt.style.use('../data/thermal-gs.mplstyle')
 fig,ax = plt.subplots(2, 1, figsize=(4, 6), sharex=True)
 fig.subplots_adjust(hspace=0.03, wspace=0.3)
 cmap = mpl.cm.get_cmap('Oranges')
+thin = 10000
+median_values = np.median(samples[::thin, :], axis=0)
 
 # Stokes I  
 ax[0].set_ylabel('Stokes I (mJy)')
 ax[0].set_xlim(10, 50)
-ax[0].set_ylim(10, 50)
+ax[0].set_ylim(10, 55)
 
 ax[0].set_xscale('log')
 ax[0].set_yscale('log')
@@ -89,15 +95,17 @@ ax[0].yaxis.set_major_locator(mpl.ticker.LogLocator(base=10, numticks=5, subs=[1
 ax[0].yaxis.set_minor_locator(mpl.ticker.LogLocator(base=10, numticks=40, subs=np.arange(10, 50)*0.1))
 ax[0].grid()
 
-for i in range(len(I_models)):
-    ax[0].plot(freqs_model, I_models[i], color='black', alpha=0.1)
+for i in range(len(I_models_1)):
+    ax[0].plot(freqs_model, I_models_1[i]+I_models_2[i], color='black', alpha=0.1)
+    ax[0].plot(freqs_model, I_models_1[i], color='C0', alpha=0.1, label=r'$\phi=%.1f^{\circ}$' % median_values[4])
+    ax[0].plot(freqs_model, I_models_2[i], color='C1', alpha=0.1, label=r'$\phi=%.1f^{\circ}$' % median_values[5])
 ax[0].errorbar(freqs_obs, I_obs, yerr=sI_obs, marker='o', color=cmap(0.75), linestyle='')
 
 # Stokes V/I
 ax[1].axhline(y=0, color='black')
 ax[1].set_xlabel('Frequency (GHz)')
 ax[1].set_ylabel('Stokes V/I')
-ax[1].set_ylim(0.05, -0.05)
+ax[1].set_ylim(-0.5, 0.5)
 
 ax[1].set_xscale('log')
 ax[1].xaxis.set_major_formatter(mpl.ticker.ScalarFormatter())
@@ -106,16 +114,23 @@ ax[1].yaxis.set_major_formatter(mpl.ticker.FormatStrFormatter('%3.3g'))
 ax[1].yaxis.set_minor_formatter(mpl.ticker.NullFormatter())
 ax[1].xaxis.set_major_locator(mpl.ticker.LogLocator(base=10, numticks=5, subs=[1, 2, 3, 4, 5]))
 ax[1].xaxis.set_minor_locator(mpl.ticker.LogLocator(base=10, numticks=25, subs=np.arange(1, 25)*0.2))
-ax[1].yaxis.set_major_locator(mpl.ticker.MultipleLocator(0.02))
-ax[1].yaxis.set_minor_locator(mpl.ticker.MultipleLocator(0.005))
+ax[1].yaxis.set_major_locator(mpl.ticker.MultipleLocator(0.2))
+ax[1].yaxis.set_minor_locator(mpl.ticker.MultipleLocator(0.05))
 ax[1].grid()
 
-for i in range(len(V_models)):
-    ax[1].plot(freqs_model, V_models[i]/I_models[i], color='black', alpha=0.1)
+for i in range(len(V_models_1)):
+    ax[1].plot(freqs_model, (V_models_1[i]+V_models_2[i])/(I_models_1[i]+I_models_2[i]), color='black', alpha=0.1)
+    ax[1].plot(freqs_model, V_models_1[i]/(I_models_1[i]+I_models_2[i]), color='C0', alpha=0.1)
+    ax[1].plot(freqs_model, V_models_2[i]/(I_models_1[i]+I_models_2[i]), color='C1', alpha=0.1)
 ax[1].errorbar(freqs_obs, V_obs/I_obs, yerr=np.sqrt((sI_obs/I_obs)**2+(sV_obs/V_obs)**2)*np.abs(V_obs/I_obs), 
     marker='o', color=cmap(0.75), linestyle='')
 
 # Final setup
+handles,labels = ax[0].get_legend_handles_labels()
+by_label = dict(zip(labels, handles))
+legend = ax[0].legend(by_label.values(), by_label.keys(), loc='upper right')
+legend.legendHandles[0].set_alpha(1)
+legend.legendHandles[1].set_alpha(1)
 fig.set_facecolor('white')
 plt.savefig('../figures/Algol_SED.png', bbox_inches='tight')
 plt.savefig('../figures/Algol_SED.pdf', bbox_inches='tight')
@@ -127,9 +142,7 @@ plt.show()
 # In[4]:
 
 
-thin = 10000
 plt_labels = ['$L$', '$\delta$', '$n_e$', '$B$', '$\phi$', '$\phi_2$']
-median_values = np.median(samples[::thin, :], axis=0)
 winnerWalker = np.argmax(sampler.get_log_prob(flat=True))
 mostParams = samples[winnerWalker]
 cmap.set_under(color='w')

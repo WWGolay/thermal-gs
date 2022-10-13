@@ -109,7 +109,7 @@ ax[1].errorbar(freqs_obs, V_obs/I_obs, yerr=np.sqrt((sI_obs/I_obs)**2+(sV_obs/V_
     color=cmap(0.75), marker='o', linestyle='')
 
 # Final setup
-ax[0].text(22, 25, '(a) HR 1099', fontsize=18) 
+ax[0].text(41, 25, '(a)', fontsize=18) 
 fig.set_facecolor('white')
 plt.savefig('../figures/HR1099_SED.png', bbox_inches='tight')
 plt.savefig('../figures/HR1099_SED.pdf', bbox_inches='tight')
@@ -180,7 +180,7 @@ ax[1].errorbar(freqs_obs, V_obs/I_obs, yerr=np.sqrt((sI_obs/I_obs)**2+(sV_obs/V_
     marker='o', color=cmap(0.75), linestyle='')
 
 # Final setup
-ax[0].text(20, 77, '(b) UX Arietis', fontsize=18) 
+ax[0].text(41, 77, '(b)', fontsize=18) 
 fig.set_facecolor('white')
 plt.savefig('../figures/UXArietis_SED.png', bbox_inches='tight')
 plt.savefig('../figures/UXArietis_SED.pdf', bbox_inches='tight')

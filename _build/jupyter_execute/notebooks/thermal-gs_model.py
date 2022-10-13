@@ -11,6 +11,8 @@
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
+import warnings
+warnings.filterwarnings('ignore')
 
 
 # ## 1.2. <a href="https://www.dropbox.com/s/y5ibmq9feb5crbe/thermal-gs_model.zip?dl=1">Download data</a>

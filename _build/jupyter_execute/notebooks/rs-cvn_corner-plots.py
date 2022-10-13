@@ -13,6 +13,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import emcee
 import corner
+import warnings
+warnings.filterwarnings('ignore')
 
 
 # ## 4.2. <a href="https://www.dropbox.com/s/nd2bo8uu8qnic50/rs-cvn_corner-plots.zip?dl=1">Download data</a>
@@ -82,7 +84,7 @@ corner.overplot_points(cornerFig, np.array([mostParams]), color='C0', marker='s'
 corner.overplot_lines(cornerFig, median_values, color='black', label='Median')
 corner.overplot_points(cornerFig, np.array([median_values]), color='black', marker='s', ms=5)
 
-cornerFig.text(0.675, 0.98, '(a) HR 1099', fontsize=36) 
+cornerFig.text(0.9, 0.98, '(a)', fontsize=36) 
 cornerFig.set_facecolor('white')
 plt.savefig('../figures/HR1099_corner.png', bbox_inches='tight')
 plt.savefig('../figures/HR1099_corner.pdf', bbox_inches='tight')
@@ -132,7 +134,7 @@ corner.overplot_points(cornerFig, np.array([median_values]), color='black', mark
 handles,labels = cornerFig.gca().get_legend_handles_labels()
 by_label = dict(zip(labels, handles))
 cornerFig.legend(by_label.values(), by_label.keys(), fontsize=24, loc='upper right', bbox_to_anchor=(1, 0.97))
-cornerFig.text(0.675, 0.98, '(b) UX Arietis', fontsize=36) 
+cornerFig.text(0.9, 0.98, '(b)', fontsize=36) 
 cornerFig.set_facecolor('white')
 plt.savefig('../figures/UXArietis_corner.png', bbox_inches='tight')
 plt.savefig('../figures/UXArietis_corner.pdf', bbox_inches='tight')
