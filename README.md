@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Quickstart
-This site hosts the collection of Jupyter notebooks used to produce each figure in the paper. All of the data used by each notebook is available [here](). Individual datasets for each notebook can also be downloaded directly from within the notebooks themselves.
+This site hosts the collection of Jupyter notebooks used to produce each figure in the paper. All of the data used by each notebook is available [here](https://wwgolay.github.io/thermal-gs). Individual datasets for each notebook can also be downloaded directly from within the notebooks themselves.
 
 ## Environment setup
 The main [repo](https://github.com/wwgolay/thermal-gs) also hosts a `thermal-gs.yaml` file for reproducing the Python environment used with either pip or conda:
