@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # B2. Walker plot
+# # B1. Walker plot
 
-# ## B2.1. Notebook setup
+# ## B1.1. Notebook setup
 
 # In[1]:
 
@@ -15,7 +15,7 @@ import emcee
 from scipy.stats import gaussian_kde
 
 
-# ## B2.2. <a href="https://www.dropbox.com/s/kswykzkuv1suutk/walker-plot_appendixB.zip?dl=1">Download data</a>
+# ## B1.2. <a href="https://www.dropbox.com/s/kswykzkuv1suutk/walker-plot_appendixB.zip?dl=1">Download data</a>
 
 # Unzip the contents into a folder named <font color='green'>data</font> in the same level as the notebooks folder. The directory structure should end up looking like the following: 
 # ```
@@ -35,7 +35,7 @@ from scipy.stats import gaussian_kde
 # .
 # .
 
-# ## B2.3. Load
+# ## B1.3. Load
 
 # In[2]:
 
@@ -46,7 +46,7 @@ samples = sampler.get_chain()
 plt.style.use('../data/thermal-gs.mplstyle')
 
 
-# ## B2.4. Plot
+# ## B1.4. Plot
 
 # In[3]:
 
