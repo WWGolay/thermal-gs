@@ -143,8 +143,6 @@ plt.show()
 
 
 plt_labels = ['$L$', '$\delta$', '$n_e$', '$B$', '$\phi$', '$\phi_2$']
-winnerWalker = np.argmax(sampler.get_log_prob(flat=True))
-mostParams = samples[winnerWalker]
 cmap.set_under(color='w')
 
 cornerFig = corner.corner(samples[::thin, :],color='black',top_ticks=True,quiet=True, show_titles=True,use_math_text=True,
@@ -153,10 +151,8 @@ title_kwargs={"fontsize":16}, max_n_ticks=4, bins=25, title_fmt='3.3g', plot_den
 levels=(0.393, 0.865, 0.989), hist_kwargs={'color':cmap(0.75)}, 
 contourf_kwargs={'colors':(cmap(-1), cmap(0.25), cmap(0.75), cmap(0.999)), 'alpha':0.75})
 
-corner.overplot_lines(cornerFig, lmfit_params, color='C1', label='Least squares')
-corner.overplot_points(cornerFig, np.array([lmfit_params]), color='C1', marker='s', ms=3)
-corner.overplot_lines(cornerFig, mostParams, color='C0', label='Most probable')
-corner.overplot_points(cornerFig, np.array([mostParams]), color='C0', marker='s', ms=5)
+corner.overplot_lines(cornerFig, lmfit_params, color='C0', label='LMFIT')
+corner.overplot_points(cornerFig, np.array([lmfit_params]), color='C0', marker='s', ms=5)
 corner.overplot_lines(cornerFig, median_values, color='black', label='Median')
 corner.overplot_points(cornerFig, np.array([median_values]), color='black', marker='s', ms=5)
 

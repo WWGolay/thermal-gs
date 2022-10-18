@@ -66,8 +66,6 @@ plt.style.use('../data/thermal-gs.mplstyle')
 thin = 10000
 plt_labels = ['$L$', '$\delta$', '$n_e$', '$B$', '$\phi$']
 median_values = np.median(samples[::thin, :], axis=0)
-winnerWalker = np.argmax(sampler.get_log_prob(flat=True))
-mostParams = samples[winnerWalker]
 cmap = mpl.cm.get_cmap('Blues')
 cmap.set_under(color='w')
 
@@ -77,10 +75,8 @@ title_kwargs={"fontsize":16}, max_n_ticks=4, bins=25, title_fmt='3.3g', plot_den
 smooth=0.5, levels=(0.393, 0.865, 0.989), hist_kwargs={'color':cmap(0.75)}, 
 contourf_kwargs={'colors':(cmap(-1), cmap(0.25), cmap(0.75), cmap(0.999)), 'alpha':0.75})
 
-corner.overplot_lines(cornerFig, lmfit_params, color='C1', label='Least squares')
-corner.overplot_points(cornerFig, np.array([lmfit_params]), color='C1', marker='s', ms=3)
-corner.overplot_lines(cornerFig, mostParams, color='C0', label='Most probable')
-corner.overplot_points(cornerFig, np.array([mostParams]), color='C0', marker='s', ms=5)
+corner.overplot_lines(cornerFig, lmfit_params, color='C0', label='LMFIT')
+corner.overplot_points(cornerFig, np.array([lmfit_params]), color='C0', marker='s', ms=5)
 corner.overplot_lines(cornerFig, median_values, color='black', label='Median')
 corner.overplot_points(cornerFig, np.array([median_values]), color='black', marker='s', ms=5)
 
@@ -113,8 +109,6 @@ lmfit_params /= np.array([1, 1, 1, 1, np.pi/180])
 thin = 1
 plt_labels = ['$L$', '$\delta$', '$n_e$', '$B$', '$\phi$']
 median_values = np.median(samples[::thin, :], axis=0)
-winnerWalker = np.argmax(sampler.get_log_prob(flat=True))
-mostParams = samples[winnerWalker]
 cmap = mpl.cm.get_cmap('Greens')
 cmap.set_under(color='w')
 
@@ -124,10 +118,8 @@ title_kwargs={"fontsize":16}, max_n_ticks=4, bins=25, title_fmt='3.3g', plot_den
 levels=(0.393, 0.865, 0.989), hist_kwargs={'color':cmap(0.75)}, 
 contourf_kwargs={'colors':(cmap(-1), cmap(0.25), cmap(0.75), cmap(0.999)), 'alpha':0.75})
 
-corner.overplot_lines(cornerFig, lmfit_params, color='C1', label='Least squares')
-corner.overplot_points(cornerFig, np.array([lmfit_params]), color='C1', marker='s', ms=3)
-corner.overplot_lines(cornerFig, mostParams, color='C0', label='Most probable')
-corner.overplot_points(cornerFig, np.array([mostParams]), color='C0', marker='s', ms=5)
+corner.overplot_lines(cornerFig, lmfit_params, color='C0', label='LMFIT')
+corner.overplot_points(cornerFig, np.array([lmfit_params]), color='C0', marker='s', ms=5)
 corner.overplot_lines(cornerFig, median_values, color='black', label='Median')
 corner.overplot_points(cornerFig, np.array([median_values]), color='black', marker='s', ms=5)
 
