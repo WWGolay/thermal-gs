@@ -1,7 +1,7 @@
 # A search for thermal gyrosynchrotron emission from hot stellar coronae
 
 [![paper](https://img.shields.io/badge/read-the%20paper-B31B1B)]()
-[![DOI]()]()
+[![DOI](https://zenodo.org/badge/536387182.svg)](https://zenodo.org/badge/latestdoi/536387182)
 [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://wwgolay.github.io/thermal-gs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
