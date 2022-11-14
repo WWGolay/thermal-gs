@@ -44,6 +44,8 @@ warnings.filterwarnings('ignore')
 data = np.loadtxt('../data/thermal-gs_model.txt').T
 plt.style.use('../data/thermal-gs.mplstyle')
 
+data[data < 1e-12] = np.nan # Avoid numerical instabilities getting plotted
+
 
 # ## 1.4. Plot
 
@@ -94,13 +96,13 @@ for i in range(4):
     ax[i][1].plot(data[0], (data[i*2+1]-data[i*2+2])/(data[i*2+1]+data[i*2+2]), color='black')
 
 # Final setup
-ax[0][1].text(12, 0.875, r'log$(T_e)=7.5$', fontsize=12) 
+ax[0][1].text(12, 0.875, r'$T_e=10^{7.5}$ K', fontsize=12) 
 ax[0][1].text(12, 0.775, r'$B=500$ G', fontsize=12)
-ax[1][1].text(12, 0.875, r'log$(T_e)=7.5$', fontsize=12) 
+ax[1][1].text(12, 0.875, r'$T_e=10^{7.5}$ K', fontsize=12) 
 ax[1][1].text(12, 0.775, r'$B=1500$ G', fontsize=12)
-ax[2][1].text(12, 0.875, r'log$(T_e)=8$', fontsize=12) 
+ax[2][1].text(12, 0.875, r'$T_e=10^8$ K', fontsize=12) 
 ax[2][1].text(12, 0.775, r'$B=500$ G', fontsize=12)
-ax[3][1].text(12, 0.875, r'log$(T_e)=8$', fontsize=12) 
+ax[3][1].text(12, 0.875, r'$T_e=10^8$ K', fontsize=12) 
 ax[3][1].text(12, 0.775, r'$B=1500$ G', fontsize=12)
 
 ax[0][1].text(75, 0.875, '(a)', fontsize=18)

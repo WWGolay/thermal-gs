@@ -58,18 +58,22 @@ plt.style.use('../data/thermal-gs.mplstyle')
 
 
 thin = 10000
-plt_labels = ['$L_{pwr}$', '$\delta$', '$n_{e,pwr}$', '$B_{pwr}$', '$\phi_{pwr}$', '$L_{th}$', '$T_e$', '$n_{e,th}$', '$B_{th}$', '$\phi_{th}$']
+plt_labels = [r'$L_{\rm pwr}$', '$\delta$', r'$n_{e,{\rm pwr}}$', r'$B_{\rm pwr}$', r'$\phi_{\rm pwr}$', r'$L_{\rm th}$', '$T_e$', r'$n_{e,{\rm th}}$', r'$B_{\rm th}$', r'$\phi_{\rm th}$']
 median_values = np.median(samples[::thin, :], axis=0)
 cmap = mpl.cm.get_cmap('Purples')
 cmap.set_under(color='w')
 
 cornerFig = corner.corner(samples[::thin, :],color='black',top_ticks=True,quiet=True, show_titles=True,use_math_text=True,
-labels=plt_labels,plot_datapoints=False,quantiles=[0.16, 0.84], title_quantiles=[0.16, 0.5, 0.84], label_kwargs={"fontsize":16}, 
+labels=plt_labels,plot_datapoints=False, title_quantiles=[0.16, 0.5, 0.84], label_kwargs={"fontsize":24}, 
 title_kwargs={"fontsize":16}, max_n_ticks=4, bins=25, title_fmt='3.3g', plot_density=False, fill_contours=True,
-levels=(0.393, 0.865, 0.989), hist_kwargs={'color':cmap(0.75)}, 
+levels=(0.393, 0.865, 0.989), hist_kwargs={'linewidth':0.75, 'color':cmap(0.75)},
+contour_kwargs={'linewidths':0.5, 'colors':'black'}, 
 contourf_kwargs={'colors':(cmap(-1), cmap(0.25), cmap(0.75), cmap(0.999)), 'alpha':0.75})
 
-corner.overplot_lines(cornerFig, lmfit_params, color='C0', label='LMFIT')
+for axis in cornerFig.axes:
+    axis.tick_params(axis='both', which='major', labelsize=16)
+
+corner.overplot_lines(cornerFig, lmfit_params, color='C0', label='Least squares')
 corner.overplot_points(cornerFig, np.array([lmfit_params]), color='C0', marker='s', ms=5)
 corner.overplot_lines(cornerFig, median_values, color='black', label='Median')
 corner.overplot_points(cornerFig, np.array([median_values]), color='black', marker='s', ms=5)
