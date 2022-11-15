@@ -313,4 +313,3 @@ dependencies:
     - uc-micro-py==1.0.1
     - user-agents==2.2.0
     - websocket-client==1.4.1
-prefix: /Users/will/miniforge3
