@@ -1,0 +1,60 @@
+Traceback (most recent call last):
+  File "/Users/will/miniforge3/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/will/miniforge3/lib/python3.10/site-packages/nbclient/client.py", line 1263, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/will/miniforge3/lib/python3.10/site-packages/nbclient/util.py", line 85, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/will/miniforge3/lib/python3.10/site-packages/nbclient/util.py", line 60, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/will/miniforge3/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/Users/will/miniforge3/lib/python3.10/site-packages/nbclient/client.py", line 701, in async_execute
+    await self.async_execute_cell(
+  File "/Users/will/miniforge3/lib/python3.10/site-packages/nbclient/client.py", line 1019, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/will/miniforge3/lib/python3.10/site-packages/nbclient/client.py", line 913, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+sampler = emcee.backends.HDFBackend('../data/V410Tau_chain.h5')
+samples = sampler.get_chain(flat=True)
+samples /= np.array([1, 1, 1, 1, np.pi/180, 1, 1, 1, 1, np.pi/180])
+lmfit_params = np.loadtxt('../data/V410Tau_lmfit_params.txt')
+lmfit_params /= np.array([1, 1, 1, 1, np.pi/180, 1, 1, 1, 1, np.pi/180])
+
+plt.style.use('../data/thermal-gs.mplstyle')
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mAttributeError[0m                            Traceback (most recent call last)
+Cell [0;32mIn [2], line 2[0m
+[1;32m      1[0m sampler [38;5;241m=[39m emcee[38;5;241m.[39mbackends[38;5;241m.[39mHDFBackend([38;5;124m'[39m[38;5;124m../data/V410Tau_chain.h5[39m[38;5;124m'[39m)
+[0;32m----> 2[0m samples [38;5;241m=[39m [43msampler[49m[38;5;241;43m.[39;49m[43mget_chain[49m[43m([49m[43mflat[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+[1;32m      3[0m samples [38;5;241m/[39m[38;5;241m=[39m np[38;5;241m.[39marray([[38;5;241m1[39m, [38;5;241m1[39m, [38;5;241m1[39m, [38;5;241m1[39m, np[38;5;241m.[39mpi[38;5;241m/[39m[38;5;241m180[39m, [38;5;241m1[39m, [38;5;241m1[39m, [38;5;241m1[39m, [38;5;241m1[39m, np[38;5;241m.[39mpi[38;5;241m/[39m[38;5;241m180[39m])
+[1;32m      4[0m lmfit_params [38;5;241m=[39m np[38;5;241m.[39mloadtxt([38;5;124m'[39m[38;5;124m../data/V410Tau_lmfit_params.txt[39m[38;5;124m'[39m)
+
+File [0;32m~/miniforge3/lib/python3.10/site-packages/emcee/backends/backend.py:75[0m, in [0;36mBackend.get_chain[0;34m(self, **kwargs)[0m
+[1;32m     60[0m [38;5;28;01mdef[39;00m [38;5;21mget_chain[39m([38;5;28mself[39m, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[1;32m     61[0m     [38;5;124;03m"""Get the stored chain of MCMC samples[39;00m
+[1;32m     62[0m 
+[1;32m     63[0m [38;5;124;03m    Args:[39;00m
+[0;32m   (...)[0m
+[1;32m     73[0m 
+[1;32m     74[0m [38;5;124;03m    """[39;00m
+[0;32m---> 75[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mget_value[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mchain[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/miniforge3/lib/python3.10/site-packages/emcee/backends/hdf.py:152[0m, in [0;36mHDFBackend.get_value[0;34m(self, name, flat, thin, discard)[0m
+[1;32m    150[0m [38;5;28;01mdef[39;00m [38;5;21mget_value[39m([38;5;28mself[39m, name, flat[38;5;241m=[39m[38;5;28;01mFalse[39;00m, thin[38;5;241m=[39m[38;5;241m1[39m, discard[38;5;241m=[39m[38;5;241m0[39m):
+[1;32m    151[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39minitialized:
+[0;32m--> 152[0m         [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m(
+[1;32m    153[0m             [38;5;124m"[39m[38;5;124mYou must run the sampler with [39m[38;5;124m"[39m
+[1;32m    154[0m             [38;5;124m"[39m[38;5;124m'[39m[38;5;124mstore == True[39m[38;5;124m'[39m[38;5;124m before accessing the [39m[38;5;124m"[39m
+[1;32m    155[0m             [38;5;124m"[39m[38;5;124mresults[39m[38;5;124m"[39m
+[1;32m    156[0m         )
+[1;32m    157[0m     [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mopen() [38;5;28;01mas[39;00m f:
+[1;32m    158[0m         g [38;5;241m=[39m f[[38;5;28mself[39m[38;5;241m.[39mname]
+
+[0;31mAttributeError[0m: You must run the sampler with 'store == True' before accessing the results
+AttributeError: You must run the sampler with 'store == True' before accessing the results
+
