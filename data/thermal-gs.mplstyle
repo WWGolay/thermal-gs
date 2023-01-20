@@ -6,7 +6,8 @@ xtick.major.size: 10.0
 xtick.minor.size: 5.0
 ytick.major.size: 10.0
 ytick.minor.size: 5.0
-errorbar.capsize: 6.0
+lines.markersize: 5.0
+errorbar.capsize: 4.0
 legend.framealpha: 0.9
 figure.dpi: 400
 axes.linewidth: 2.0
